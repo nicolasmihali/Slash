@@ -2716,14 +2716,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5372483253965518439, guid: 8de705187471c084aac56088e8b03c90, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517486696477943693, guid: 8de705187471c084aac56088e8b03c90, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 55
-      objectReference: {fileID: 0}
     - target: {fileID: 6913840263069424888, guid: 8de705187471c084aac56088e8b03c90, type: 3}
       propertyPath: m_Name
       value: PlayerRig
