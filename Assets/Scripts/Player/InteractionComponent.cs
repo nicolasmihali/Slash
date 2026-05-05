@@ -15,7 +15,6 @@ public class InteractionComponent : MonoBehaviour
         if (Physics.Raycast(_cameraPivot.transform.position, _cameraPivot.transform.forward, out RaycastHit hitInfo, _distance))
         {
             Debug.DrawRay(_cameraPivot.transform.position, _cameraPivot.transform.forward * hitInfo.distance, Color.blue);
-            Debug.Log(hitInfo.collider.name);
 
             if (hitInfo.collider.TryGetComponent<IInteractable>(out IInteractable interactable))
             {

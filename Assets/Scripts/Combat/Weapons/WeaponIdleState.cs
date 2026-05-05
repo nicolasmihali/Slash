@@ -2,19 +2,21 @@ using UnityEngine;
 
 public class WeaponIdleState : WeaponBaseState
 {
-    public WeaponIdleState(WeaponStateMachine stateMachine) : base(stateMachine)
-    {
-    }
+    public WeaponIdleState(WeaponStateMachine stateMachine) : base(stateMachine) {}
 
     public override void Enter()
     {
+        stateMachine.Animator.CrossFadeInFixedTime("SwordIdle", 0.2f);
+
         stateMachine.InputReader.AttackEvent += OnAttack;
-        stateMachine.Animator.Play("Idle");
     }
 
     public override void Tick(float deltaTime)
     {
-        
+        if (stateMachine.InputReader.BlockInput)
+        {
+            stateMachine.SwitchState(new WeaponBlockState(stateMachine));
+        }
     }
 
     public override void Exit()
