@@ -1,10 +1,10 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponDamage : MonoBehaviour
 {
-    [SerializeField] private Collider _playerCollider;
+    [SerializeField] private Collider _userCollider;
 
     private List<Collider> _alreadyCollidedWith = new List<Collider>();
     private float _damage;
@@ -16,7 +16,7 @@ public class WeaponDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == _playerCollider) { return; }
+        if (other == _userCollider) { return; }
 
         if (_alreadyCollidedWith.Contains(other) ) { return; }
 

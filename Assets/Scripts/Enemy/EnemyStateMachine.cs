@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyStateMachine : StateMachine
@@ -7,6 +7,8 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public GameObject Player { get; private set; }
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
+    [field: SerializeField] public Health Health { get; private set; }
+    [field: SerializeField] public WeaponHandler WeaponHandler { get; private set; }
     [field: SerializeField] public float MovementSpeed { get; private set; }
     [field: SerializeField] public float AttackDistance { get; private set; }
     [field: SerializeField] public Attack[] Attacks { get; private set; }
@@ -18,6 +20,8 @@ public class EnemyStateMachine : StateMachine
         Agent.updatePosition = false;
         Agent.updateRotation = false;
 
+        Health.OnDamaged += () => SwitchState(new EnemyHitState(this));
+
         SwitchState(new EnemyIdleState(this));
     }
 
@@ -28,5 +32,20 @@ public class EnemyStateMachine : StateMachine
 
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, deltaTime * 10f);
+    }
+
+    public void OnDestroy()
+    {
+        Health.OnDamaged -= () => SwitchState(new EnemyHitState(this));
+    }
+
+    public void EnableWeapon()
+    {
+        WeaponHandler.EnableWeapon();
+    }
+
+    public void DisableWeapon()
+    {
+        WeaponHandler.DisableWeapon();
     }
 }

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyChaseState : EnemyBaseState
 {
@@ -13,7 +13,6 @@ public class EnemyChaseState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
-        Debug.Log("chase state");
     }
 
     public override void Tick(float deltaTime)

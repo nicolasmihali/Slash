@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -11,6 +11,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         debugText.text =
             $"Movement: {playerSM.CurrentStateName}\n" +
-            $"Weapon: {weaponSM.CurrentStateName}";
+            $"Weapon: {weaponSM.CurrentStateName}\n" +
+            $"Health; {playerSM.health.GetHealth()}";
     }
 }

@@ -105,6 +105,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -508,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <WeaponDamage>k__BackingField
       value: 
-      objectReference: {fileID: 6361127942232630639}
+      objectReference: {fileID: 1065084708606426118}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.size
       value: 3
@@ -577,6 +578,10 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 55
       objectReference: {fileID: 0}
+    - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <health>k__BackingField
+      value: 
+      objectReference: {fileID: 8075740802537657449}
     - target: {fileID: 2599367561104184923, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -643,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7660167395453596536, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518635552296356129, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: m_Cameras.Array.size
@@ -665,6 +670,9 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 944323381536967036}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3854424238251458656, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8075740802537657449}
     - targetCorrespondingSourceObject: {fileID: 8863037739061172126, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 129100236058716757}
@@ -676,7 +684,7 @@ PrefabInstance:
       addedObject: {fileID: 3415386269942889114}
     - targetCorrespondingSourceObject: {fileID: 7660167395453596536, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6361127942232630639}
+      addedObject: {fileID: 1065084708606426118}
   m_SourcePrefab: {fileID: 100100000, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
 --- !u!143 &2241825019644977251 stripped
 CharacterController:
@@ -761,7 +769,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6361127942232630639
+--- !u!114 &1065084708606426118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -773,13 +781,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7829ad595756b354eadf603af0308431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDamage
-  _playerCollider: {fileID: 2241825019644977251}
+  _userCollider: {fileID: 2241825019644977251}
 --- !u!114 &5203174738573473327 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
   m_PrefabInstance: {fileID: 6757808678644763091}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7544977828199926195}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e2ce39c3398e3940a00b57701f66ae6, type: 3}
@@ -790,7 +798,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
   m_PrefabInstance: {fileID: 6757808678644763091}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7544977828199926195}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62c60adc723d85048b7e68d55ff549ea, type: 3}
@@ -801,3 +809,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 169795485180290872, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
   m_PrefabInstance: {fileID: 6757808678644763091}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7544977828199926195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3854424238251458656, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+  m_PrefabInstance: {fileID: 6757808678644763091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8075740802537657449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544977828199926195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d60149a10c6146419d8dd135ad9aef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  _maxHealth: 100

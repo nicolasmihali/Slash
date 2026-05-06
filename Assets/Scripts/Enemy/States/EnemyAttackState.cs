@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
@@ -21,7 +21,7 @@ public class EnemyAttackState : EnemyBaseState
     {
         float distance = Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position);
 
-        float normalizedTime = GetNormalizedTime();
+        float normalizedTime = GetNormalizedTime("Attack");
 
         if (normalizedTime >= 1f)
         {
@@ -48,27 +48,9 @@ public class EnemyAttackState : EnemyBaseState
 
     }
 
-    private float GetNormalizedTime()
-    {
-        AnimatorStateInfo currentInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
-        AnimatorStateInfo nextInfo = stateMachine.Animator.GetNextAnimatorStateInfo(0);
-
-        if (stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
-        {
-            return nextInfo.normalizedTime;
-        }
-
-        else if (!stateMachine.Animator.IsInTransition(0) && currentInfo.IsTag("Attack"))
-        {
-            return currentInfo.normalizedTime;
-        }
-
-        return 0;
-    }
-
     private void TryComboAttack()
     {
-        float normalizedTime = GetNormalizedTime();
+        float normalizedTime = GetNormalizedTime("Attack");
 
         if (_attack.ComboStateIndex == -1) { return; }
 
