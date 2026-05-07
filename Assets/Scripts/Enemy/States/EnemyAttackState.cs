@@ -5,8 +5,6 @@ public class EnemyAttackState : EnemyBaseState
 {
     private Attack _attack;
 
-    [SerializeField] private float attackDistance;
-
     public EnemyAttackState(EnemyStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         _attack = stateMachine.Attacks[attackIndex];
@@ -15,6 +13,8 @@ public class EnemyAttackState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
+
+        stateMachine.WeaponDamage.SetAttack(_attack.Damage);
     }
 
     public override void Tick(float deltaTime)

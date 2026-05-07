@@ -1,9 +1,9 @@
 ﻿using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyHitState : EnemyBaseState
+public class EnemyTakeDamageState : EnemyBaseState
 {
-    public EnemyHitState(EnemyStateMachine stateMachine) : base(stateMachine)
+    public EnemyTakeDamageState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
 

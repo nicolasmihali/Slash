@@ -11,9 +11,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action FireEvent;
     public event Action InteractEvent;
     public event Action AttackEvent;
-    public event Action BlockEvent;
 
     public bool SprintInput { get; private set; }
+    public bool CrouchInput { get; private set; }
     public bool BlockInput { get; private set; }
 
     private Controls _controls;
@@ -65,5 +65,10 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnSprint(InputAction.CallbackContext context)
     {
         SprintInput = context.ReadValueAsButton();
+    }
+
+    public void OnCrouch(InputAction.CallbackContext context)
+    {
+        CrouchInput = context.ReadValueAsButton();
     }
 }

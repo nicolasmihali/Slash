@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float _maxHealth = 100f;
 
     public event Action OnDamaged;
+    public event Action<Vector3> OnDamagedWithSource;
     private float health;
 
     private void Start()
@@ -13,17 +14,13 @@ public class Health : MonoBehaviour
         health = _maxHealth;
     }
 
-    public void DealDamage(float damage)
+    public void DealDamage(float damage, Vector3 source)
     {
-        if (health == 0) {
-            Destroy(gameObject);
-        }
-
         health = Mathf.Max(0, health - damage);
-        OnDamaged?.Invoke();
-        // Death check and such.
+        if (gameObject.CompareTag("Player")) { OnDamagedWithSource?.Invoke(source); }
+        else { OnDamaged?.Invoke(); }
 
-        Debug.Log(health);
+        if (health <= 0) { Destroy(gameObject); }
     }
 
     public float GetHealth()

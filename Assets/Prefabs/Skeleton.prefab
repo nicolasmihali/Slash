@@ -2086,6 +2086,7 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 274344760002781910}
   <Health>k__BackingField: {fileID: 9109566062917144856}
   <WeaponHandler>k__BackingField: {fileID: 1832171030075529364}
+  <WeaponDamage>k__BackingField: {fileID: 11287157382311936}
   <MovementSpeed>k__BackingField: 4
   <AttackDistance>k__BackingField: 2
   <Attacks>k__BackingField:
@@ -2810,10 +2811,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.08014867
-  m_Height: 0.82323915
+  m_Radius: 0.08
+  m_Height: 1.1240242
   m_Direction: 1
-  m_Center: {x: 0.059851848, y: 0.57912993, z: 0.0000016184125}
+  m_Center: {x: 0.059852656, y: 0.72952163, z: 0.000003440384}
 --- !u!54 &3114643540046534925
 Rigidbody:
   m_ObjectHideFlags: 0

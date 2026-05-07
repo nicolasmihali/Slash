@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     {
         _pitch -= _mouseCapture._mouseInput.y;
         _yaw += _mouseCapture._mouseInput.x;
-        _pitch = Mathf.Clamp(_pitch, -80, 80);
+        _pitch = Mathf.Clamp(_pitch, -89, 89);
         _player.transform.localRotation = Quaternion.Euler(0f, _yaw, 0f);
         _cameraPivot.transform.localRotation = Quaternion.Euler(_pitch, 0f, 0f);
 

@@ -8,7 +8,7 @@ public class WeaponBlockState : WeaponBaseState
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime("SwordBlock", 0.2f);
+        stateMachine.Animator.CrossFadeInFixedTime("SwordBlock", 0.1f);
     }
 
     public override void Tick(float deltaTime)

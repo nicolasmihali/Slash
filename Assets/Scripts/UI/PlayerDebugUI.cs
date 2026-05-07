@@ -11,7 +11,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         debugText.text =
             $"Movement: {playerSM.CurrentStateName}\n" +
+            $"Posture: {playerSM.Posture}\n" +
             $"Weapon: {weaponSM.CurrentStateName}\n" +
-            $"Health; {playerSM.health.GetHealth()}";
+            $"Health: {playerSM.Health.GetHealth()}";
     }
 }
