@@ -623,10 +623,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8075740802537657449}
     - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
-      propertyPath: <CameraEffects>k__BackingField
-      value: 
-      objectReference: {fileID: 1341694335354760247}
-    - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <CrouchLayerMask>k__BackingField.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
@@ -718,6 +714,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8863037739061172126, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4725322549775273259, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
     - {fileID: 8320283685015334037, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
@@ -730,12 +730,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3854424238251458656, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8075740802537657449}
+    - targetCorrespondingSourceObject: {fileID: 3854424238251458656, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2135317681509235269}
     - targetCorrespondingSourceObject: {fileID: 2891232465214137308, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5017130420134473476}
-    - targetCorrespondingSourceObject: {fileID: 3342482726716526791, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1341694335354760247}
     - targetCorrespondingSourceObject: {fileID: 8863037739061172126, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 129100236058716757}
@@ -891,23 +891,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   _maxHealth: 100
---- !u!1 &8334594340953069844 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3342482726716526791, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
-  m_PrefabInstance: {fileID: 6757808678644763091}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1341694335354760247
+--- !u!114 &2135317681509235269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8334594340953069844}
+  m_GameObject: {fileID: 7544977828199926195}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8e12d07508d0b740b30482a063e5d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraEffects
+  _enableHeadbob: 1
+  _amplitude: 0.006
+  _frequency: 19.3
+  _player: {fileID: 5203174738573473327}
+  _camera: {fileID: 7789012187292364061}
+  _cameraPivot: {fileID: 3820888529609690897}
+--- !u!4 &7789012187292364061 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3589560633174238414, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+  m_PrefabInstance: {fileID: 6757808678644763091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8491316832199125519 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2891232465214137308, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
