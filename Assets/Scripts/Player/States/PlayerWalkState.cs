@@ -24,7 +24,7 @@ public class PlayerWalkState : PlayerGroundedState
             stateMachine.SwitchState(new PlayerSprintState(stateMachine));
         }
 
-        if (!stateMachine.Controller.isGrounded)
+        if (!stateMachine.IsGrounded())
         {
             stateMachine.SwitchState(new PlayerAirborneState(stateMachine, stateMachine.WalkSpeed, 0f));
         }
@@ -32,13 +32,20 @@ public class PlayerWalkState : PlayerGroundedState
         float currentSpeed = GetMovementSpeed();
         if (stateMachine.Posture is CrouchingStrategy)
         {
-            currentSpeed = stateMachine.WalkSpeed * 0.5f;
+            currentSpeed = stateMachine.CrouchSpeed;
         }
 
         Vector3 movement = CalculateMovement();
+        Vector3 horizontal = new Vector3(movement.x, 0f, movement.z) * currentSpeed;
+
+        // Small downward bias to keep grounded
+        //horizontal.y = -0.1f;
+
+        stateMachine.Controller.Move(horizontal * deltaTime);
+        /*Vector3 movement = CalculateMovement();
         movement.y = Physics.gravity.y;
 
-        stateMachine.Controller.Move(movement * currentSpeed * deltaTime);
+        stateMachine.Controller.Move(movement * currentSpeed * deltaTime);*/
     }
 
     public override void Exit()

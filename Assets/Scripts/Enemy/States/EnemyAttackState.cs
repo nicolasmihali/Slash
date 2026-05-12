@@ -8,6 +8,7 @@ public class EnemyAttackState : EnemyBaseState
     public EnemyAttackState(EnemyStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         _attack = stateMachine.Attacks[attackIndex];
+        //stateMachine.OnParried += OnParried;
     }
 
     public override void Enter()
@@ -58,4 +59,6 @@ public class EnemyAttackState : EnemyBaseState
 
         stateMachine.SwitchState(new EnemyAttackState(stateMachine, _attack.ComboStateIndex));
     }
+    
+    
 }

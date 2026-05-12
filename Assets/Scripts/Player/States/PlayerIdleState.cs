@@ -13,10 +13,24 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Tick(deltaTime);
 
-        Vector3 movement = CalculateMovement();
+        /*Vector3 movement = CalculateMovement();
         movement.y = Physics.gravity.y;
 
-        stateMachine.Controller.Move(movement * deltaTime);
+        stateMachine.Controller.Move(movement * deltaTime);*/
+
+        float currentSpeed = GetMovementSpeed();
+        if (stateMachine.Posture is CrouchingStrategy)
+        {
+            currentSpeed = stateMachine.CrouchSpeed;
+        }
+
+        Vector3 movement = CalculateMovement();
+        Vector3 horizontal = new Vector3(movement.x, 0f, movement.z) * currentSpeed;
+
+        // Small downward bias to keep grounded
+        //horizontal.y = -0.1f;
+
+        stateMachine.Controller.Move(horizontal * deltaTime);
 
         if (stateMachine.InputReader.MovementValue.magnitude > 0.1)
         {

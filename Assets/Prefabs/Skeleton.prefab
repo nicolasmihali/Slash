@@ -1975,7 +1975,7 @@ GameObject:
   - component: {fileID: 9109566062917144856}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2087,7 +2087,7 @@ MonoBehaviour:
   <Health>k__BackingField: {fileID: 9109566062917144856}
   <WeaponHandler>k__BackingField: {fileID: 1832171030075529364}
   <WeaponDamage>k__BackingField: {fileID: 11287157382311936}
-  <MovementSpeed>k__BackingField: 4
+  <MovementSpeed>k__BackingField: 4.5
   <AttackDistance>k__BackingField: 2
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Slash1
@@ -2811,10 +2811,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.08
-  m_Height: 1.1240242
+  m_Radius: 0.14
+  m_Height: 1.2332824
   m_Direction: 1
-  m_Center: {x: 0.059852656, y: 0.72952163, z: 0.000003440384}
+  m_Center: {x: 0.05985285, y: 0.7841505, z: 0.0000041811354}
 --- !u!54 &3114643540046534925
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2855,6 +2855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDamage
   _userCollider: {fileID: 2672507809667317656}
+  _user: {fileID: 4886256697903199641}
 --- !u!1 &7188830685134879513
 GameObject:
   m_ObjectHideFlags: 0

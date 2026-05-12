@@ -56,6 +56,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: {x: 40.16, y: 42.602, z: 118.844}
+        inSlope: {x: -2.0053306, y: 4.8320107, z: 0}
+        outSlope: {x: -2.0053306, y: 4.8320107, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1666666
+        value: {x: 0, y: 90, z: 5.754}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -109,6 +118,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: {x: -0.7315979, y: -0.52779037, z: 0.5281738}
+        inSlope: {x: 0.5315755, y: -0.5545446, z: 0.37410805}
+        outSlope: {x: 0.5315755, y: -0.5545446, z: 0.37410805}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1666666
+        value: {x: 1.065, y: -0.835, z: 0.71}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -153,7 +171,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6666667
+    m_StopTime: 1.1666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -212,6 +230,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: -0.7315979
+        inSlope: 0.5315755
+        outSlope: 0.5315755
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: 1.065
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -269,6 +296,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: -0.52779037
+        inSlope: -0.5545446
+        outSlope: -0.5545446
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: -0.835
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -326,6 +362,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: 0.5281738
+        inSlope: 0.37410805
+        outSlope: 0.37410805
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: 0.71
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -383,6 +428,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: 40.16
+        inSlope: -2.0053306
+        outSlope: -2.0053306
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -440,6 +494,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: 42.602
+        inSlope: 4.8320107
+        outSlope: 4.8320107
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: 90
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -497,6 +560,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: 118.844
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: 5.754
         inSlope: 0
         outSlope: 0
         tangentMode: 136

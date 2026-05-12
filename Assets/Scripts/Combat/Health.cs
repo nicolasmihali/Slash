@@ -7,6 +7,8 @@ public class Health : MonoBehaviour
 
     public event Action OnDamaged;
     public event Action<Vector3> OnDamagedWithSource;
+
+    public event Action<GameObject> OnDamagedWhileBlocking;
     private float health;
 
     private void Start()
@@ -14,10 +16,18 @@ public class Health : MonoBehaviour
         health = _maxHealth;
     }
 
-    public void DealDamage(float damage, Vector3 source)
+    public void DealDamage(float damage, GameObject source, Vector3 sourceTransform)
     {
+        if (gameObject.TryGetComponent<WeaponStateMachine>(out WeaponStateMachine weaponStateMachine) && weaponStateMachine.CurrentStateName == "WeaponBlockState")
+        {
+            OnDamagedWhileBlocking?.Invoke(source);
+            return;
+        }
         health = Mathf.Max(0, health - damage);
-        if (gameObject.CompareTag("Player")) { OnDamagedWithSource?.Invoke(source); }
+
+        if (gameObject.CompareTag("Player")) { 
+            OnDamagedWithSource?.Invoke(sourceTransform);
+        }
         else { OnDamaged?.Invoke(); }
 
         if (health <= 0) { Destroy(gameObject); }

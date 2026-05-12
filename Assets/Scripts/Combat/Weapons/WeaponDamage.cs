@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponDamage : MonoBehaviour
 {
     [SerializeField] private Collider _userCollider;
+    [SerializeField] private GameObject _user;
 
     private List<Collider> _alreadyCollidedWith = new List<Collider>();
     private float _damage;
@@ -24,7 +25,11 @@ public class WeaponDamage : MonoBehaviour
 
         if (other.TryGetComponent<Health>(out Health health))
         {
-            health.DealDamage(_damage, transform.position);
+            if (other.CompareTag("Enemy") && _userCollider.CompareTag("Player"))
+            {
+                
+            }
+            health.DealDamage(_damage, _user, transform.position);
         }
     }
 

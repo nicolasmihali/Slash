@@ -14,7 +14,7 @@ public abstract class PlayerGroundedState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
         // If we step off a ledge, fall (0 vertical velocity)
-        if (!stateMachine.Controller.isGrounded)
+        if (!stateMachine.IsGrounded())
         {
             stateMachine.SwitchState(new PlayerAirborneState(stateMachine, GetMovementSpeed(), 0f));
         }
@@ -29,6 +29,8 @@ public abstract class PlayerGroundedState : PlayerBaseState
         }
 
         stateMachine.Posture.SetPosture(stateMachine, deltaTime);
+
+        stateMachine.Controller.Move(Vector3.down * 2f * deltaTime);
     }
 
     public override void Exit()

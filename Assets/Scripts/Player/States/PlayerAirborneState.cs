@@ -21,21 +21,14 @@ public class PlayerAirborneState : PlayerBaseState
         Vector3 movement = CalculateMovement();
         Vector3 horizontal = new Vector3(movement.x, 0, movement.z) * _speed;
 
-        float currentGravity = stateMachine.Gravity;
-        if (_playerVelocity.y > 0f)
-        {
-            currentGravity *= stateMachine.FallMultiplier;
-        }
-
-
-        _playerVelocity.y += currentGravity * deltaTime;
-
+   
+        _playerVelocity.y += stateMachine.Gravity * deltaTime;
         Vector3 finalVelocity = horizontal;
         finalVelocity.y = _playerVelocity.y;
 
         stateMachine.Controller.Move(finalVelocity * deltaTime);
 
-        if (stateMachine.Controller.isGrounded && _playerVelocity.y <= 0f)
+        if (stateMachine.IsGrounded() && _playerVelocity.y <= 0f)
         {
             stateMachine.SwitchState(new PlayerIdleState(stateMachine));
         }

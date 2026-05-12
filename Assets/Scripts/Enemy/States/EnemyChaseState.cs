@@ -18,7 +18,6 @@ public class EnemyChaseState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         float distance = Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position);
-        Debug.Log(distance);
         if (distance <= stateMachine.AttackDistance)
         {
             stateMachine.SwitchState(new EnemyAttackState(stateMachine, 0));

@@ -507,9 +507,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <Health>k__BackingField
+      value: 
+      objectReference: {fileID: 8075740802537657449}
+    - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <BlockAmount>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <WeaponDamage>k__BackingField
       value: 
       objectReference: {fileID: 1065084708606426118}
+    - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <ParryWindowAmount>k__BackingField
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.size
       value: 3
@@ -540,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0].<ComboAttackTime>k__BackingField
-      value: 0.7
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0].<ComboStateIndex>k__BackingField
@@ -548,7 +560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[1].<ComboAttackTime>k__BackingField
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[1].<ComboStateIndex>k__BackingField
@@ -564,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0].<TransitionDuration>k__BackingField
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[1].<TransitionDuration>k__BackingField
@@ -575,6 +587,10 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1250456821864246878, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250456821864246878, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 55
       objectReference: {fileID: 0}
@@ -583,8 +599,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: Gravity
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: JumpHeight
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: CrouchSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: FallMultiplier
@@ -602,6 +626,10 @@ PrefabInstance:
       propertyPath: <CameraEffects>k__BackingField
       value: 
       objectReference: {fileID: 1341694335354760247}
+    - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <CrouchLayerMask>k__BackingField.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2599367561104184923, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -692,6 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4725322549775273259, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+    - {fileID: 8320283685015334037, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7551985650978539202, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
@@ -816,6 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDamage
   _userCollider: {fileID: 2241825019644977251}
+  _user: {fileID: 7544977828199926195}
 --- !u!114 &5203174738573473327 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}

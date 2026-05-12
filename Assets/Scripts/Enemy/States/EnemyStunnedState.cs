@@ -1,9 +1,8 @@
-﻿using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyTakeDamageState : EnemyBaseState
+public class EnemyStunnedState : EnemyBaseState
 {
-    public EnemyTakeDamageState(EnemyStateMachine stateMachine) : base(stateMachine)
+    public EnemyStunnedState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
 
@@ -24,6 +23,6 @@ public class EnemyTakeDamageState : EnemyBaseState
 
     public override void Exit()
     {
-        
+
     }
 }

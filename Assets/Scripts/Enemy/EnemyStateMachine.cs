@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyStateMachine : StateMachine
@@ -48,6 +49,11 @@ public class EnemyStateMachine : StateMachine
     public void DisableWeapon()
     {
         WeaponHandler.DisableWeapon();
+    }
+
+    public void OnParried()
+    {
+        SwitchState(new EnemyStunnedState(this));
     }
 
     private void OnDamaged()

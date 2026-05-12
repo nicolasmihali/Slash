@@ -26,14 +26,14 @@ public class PlayerSprintState : PlayerGroundedState
         float currentSpeed = GetMovementSpeed();
         if (stateMachine.Posture is CrouchingStrategy)
         {
-            currentSpeed = stateMachine.WalkSpeed * 0.5f;
+            currentSpeed = stateMachine.CrouchSpeed;
         }
 
         Vector3 movement = CalculateMovement();
         Vector3 horizontal = new Vector3(movement.x, 0f, movement.z) * currentSpeed;
 
         // Small downward bias to keep grounded
-        horizontal.y = -0.1f;
+        //horizontal.y = -0.1f;
 
         stateMachine.Controller.Move(horizontal * deltaTime);
     }
