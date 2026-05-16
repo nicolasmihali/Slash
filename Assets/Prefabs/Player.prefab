@@ -406,8 +406,18 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 4992712503568828711}
   <Controller>k__BackingField: {fileID: 4815474769655359920}
   <InteractionComponent>k__BackingField: {fileID: 8488825320541086223}
+  <Health>k__BackingField: {fileID: 0}
+  <CameraEffects>k__BackingField: {fileID: 0}
+  <CrouchLayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 0
+  <WeaponDamage>k__BackingField: {fileID: 0}
   WalkSpeed: 4
   SprintSpeed: 8
+  CrouchSpeed: 2
+  JumpHeight: 3
+  Gravity: 0
+  FallMultiplier: 4
 --- !u!114 &8488825320541086223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,8 +447,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c60adc723d85048b7e68d55ff549ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStateMachine
+  <PlayerStateMachine>k__BackingField: {fileID: 0}
+  <Health>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 4992712503568828711}
   <Animator>k__BackingField: {fileID: 7523563905349398356}
+  <WeaponDamage>k__BackingField: {fileID: 0}
+  <Attacks>k__BackingField: []
+  <LaunchAttack>k__BackingField:
+    <AnimationName>k__BackingField: 
+    <TransitionDuration>k__BackingField: 0
+    <ComboStateIndex>k__BackingField: -1
+    <ComboAttackTime>k__BackingField: 0
+    <Damage>k__BackingField: 1
+    <IsLauncher>k__BackingField: 1
+    <LaunchForce>k__BackingField: 20
+  <BlockAmount>k__BackingField: 0
+  <ParryWindowAmount>k__BackingField: 0
 --- !u!114 &7158137553588065322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,8 +635,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c60adc723d85048b7e68d55ff549ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStateMachine
+  <PlayerStateMachine>k__BackingField: {fileID: 0}
+  <Health>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 4992712503568828711}
   <Animator>k__BackingField: {fileID: 7523563905349398356}
+  <WeaponDamage>k__BackingField: {fileID: 0}
+  <Attacks>k__BackingField: []
+  <LaunchAttack>k__BackingField:
+    <AnimationName>k__BackingField: 
+    <TransitionDuration>k__BackingField: 0
+    <ComboStateIndex>k__BackingField: -1
+    <ComboAttackTime>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <IsLauncher>k__BackingField: 0
+    <LaunchForce>k__BackingField: 0
+  <BlockAmount>k__BackingField: 0
+  <ParryWindowAmount>k__BackingField: 0
 --- !u!1 &8863037739061172126
 GameObject:
   m_ObjectHideFlags: 0

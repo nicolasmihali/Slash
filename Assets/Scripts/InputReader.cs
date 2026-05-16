@@ -11,6 +11,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action FireEvent;
     public event Action InteractEvent;
     public event Action AttackEvent;
+    public event Action LaunchAttackEvent;
 
     public bool SprintInput { get; private set; }
     public bool CrouchInput { get; private set; }
@@ -44,6 +45,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed) { AttackEvent?.Invoke(); }
+    }
+
+    public void OnLaunchAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed) { LaunchAttackEvent?.Invoke(); }
     }
 
     public void OnBlock(InputAction.CallbackContext context)

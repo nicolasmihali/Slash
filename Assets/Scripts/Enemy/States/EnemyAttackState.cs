@@ -15,7 +15,7 @@ public class EnemyAttackState : EnemyBaseState
     {
         stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
 
-        stateMachine.WeaponDamage.SetAttack(_attack.Damage);
+        stateMachine.WeaponDamage.SetAttack(_attack);
     }
 
     public override void Tick(float deltaTime)

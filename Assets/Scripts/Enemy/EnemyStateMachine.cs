@@ -59,6 +59,7 @@ public class EnemyStateMachine : StateMachine
 
     private void OnDamaged()
     {
+        if (currentState is EnemyLaunchedState) { return;  }
         SwitchState(new EnemyTakeDamageState(this));
     }
 }

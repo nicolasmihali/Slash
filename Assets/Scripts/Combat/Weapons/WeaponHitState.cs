@@ -12,12 +12,19 @@ public class WeaponHitState : WeaponBaseState
 
         stateMachine.InputReader.AttackEvent += TryComboAttack;
     }
+    
+    public WeaponHitState(WeaponStateMachine stateMachine, Attack attack) : base(stateMachine)
+    {
+        _attack = attack;
+
+        stateMachine.InputReader.AttackEvent += TryComboAttack;
+    }
 
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
 
-        stateMachine.WeaponDamage.SetAttack(_attack.Damage);
+        stateMachine.WeaponDamage.SetAttack(_attack);
     }
 
     public override void Tick(float deltaTime)

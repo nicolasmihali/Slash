@@ -9,6 +9,7 @@ public class WeaponIdleState : WeaponBaseState
         stateMachine.Animator.CrossFadeInFixedTime("SwordIdle", 0.2f);
 
         stateMachine.InputReader.AttackEvent += OnAttack;
+        stateMachine.InputReader.LaunchAttackEvent += OnLaunchAttack;
     }
 
     public override void Tick(float deltaTime)
@@ -27,5 +28,11 @@ public class WeaponIdleState : WeaponBaseState
     private void OnAttack()
     {
         stateMachine.SwitchState(new WeaponHitState(stateMachine, 0));
+    }
+
+    private void OnLaunchAttack()
+    {
+        if (!stateMachine.PlayerStateMachine.IsGrounded()) { return; }
+        stateMachine.SwitchState(new WeaponHitState(stateMachine, stateMachine.LaunchAttack));
     }
 }

@@ -520,11 +520,23 @@ PrefabInstance:
       objectReference: {fileID: 1065084708606426118}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <ParryWindowAmount>k__BackingField
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <PlayerStateMachine>k__BackingField
+      value: 
+      objectReference: {fileID: 5203174738573473327}
+    - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <LaunchAttack>k__BackingField.<LaunchForce>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <LaunchAttack>k__BackingField.<AnimationName>k__BackingField
+      value: SwordLaunch
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0].<Damage>k__BackingField
@@ -537,6 +549,14 @@ PrefabInstance:
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[2].<Damage>k__BackingField
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <LaunchAttack>k__BackingField.<EnemyLaunchForce>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <LaunchAttack>k__BackingField.<PlayerLaunchForce>k__BackingField
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 391028561981659504, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0].<AnimationName>k__BackingField
@@ -622,6 +642,10 @@ PrefabInstance:
       propertyPath: <health>k__BackingField
       value: 
       objectReference: {fileID: 8075740802537657449}
+    - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
+      propertyPath: <WeaponDamage>k__BackingField
+      value: 
+      objectReference: {fileID: 1065084708606426118}
     - target: {fileID: 1584683138944696316, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: <CrouchLayerMask>k__BackingField.m_Bits
       value: 4294967295
@@ -716,7 +740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8863037739061172126, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4725322549775273259, guid: e800e7740efcf964f99cce15c5e484d5, type: 3}
@@ -904,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraEffects
   _enableHeadbob: 1
-  _amplitude: 0.006
+  _amplitude: 0.0012
   _frequency: 19.3
   _player: {fileID: 5203174738573473327}
   _camera: {fileID: 7789012187292364061}

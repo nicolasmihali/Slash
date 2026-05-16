@@ -11,6 +11,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public Health Health { get; private set; }
     [field: SerializeField] public CameraEffects CameraEffects { get; private set; }
     [field: SerializeField] public LayerMask CrouchLayerMask { get; private set; }
+    [field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
 
     public PostureStrategy Posture { get; set; } = new StandingStrategy();
 
@@ -31,6 +32,7 @@ public class PlayerStateMachine : StateMachine
         MainCameraTransform = Camera.main.transform;
 
         Health.OnDamagedWithSource += OnDamaged;
+        WeaponDamage.OnLaunchHit += OnLaunchHit;
 
         SwitchState(new PlayerIdleState(this));
     }
@@ -38,6 +40,14 @@ public class PlayerStateMachine : StateMachine
     private void OnDestroy()
     {
         Health.OnDamagedWithSource -= OnDamaged;
+        WeaponDamage.OnLaunchHit -= OnLaunchHit;
+    }
+
+    public bool IsGrounded()
+    {
+        float maxDistance = Controller.bounds.extents.y;
+        return Physics.SphereCast(Controller.bounds.center, 0.5f, Vector3.down, out RaycastHit hitInfo, maxDistance, CrouchLayerMask);
+
     }
 
     private void OnDamaged(Vector3 source)
@@ -45,15 +55,15 @@ public class PlayerStateMachine : StateMachine
         SwitchState(new PlayerTakeDamageState(this, source));
     }
 
+    private void OnLaunchHit(EnemyStateMachine enemy, float launchForce)
+    {
+        Debug.Log("OnLaunchHit received");
+        enemy.SwitchState(new EnemyLaunchedState(enemy, launchForce));
+        SwitchState(new PlayerAerialAttackState(this, launchForce));
+    }
+
     public void SetPosture(PostureStrategy newPosture)
     {
         Posture = newPosture;
-    }
-
-    public bool IsGrounded()
-    {
-        float maxDistance = Controller.bounds.extents.y;
-        return Physics.SphereCast(Controller.bounds.center, 0.5f, Vector3.down, out RaycastHit hitInfo, maxDistance, CrouchLayerMask);
-        
     }
 }

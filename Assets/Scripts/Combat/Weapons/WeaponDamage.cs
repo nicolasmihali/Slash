@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,10 @@ public class WeaponDamage : MonoBehaviour
     [SerializeField] private Collider _userCollider;
     [SerializeField] private GameObject _user;
 
+    public event Action<EnemyStateMachine, float> OnLaunchHit;
+
     private List<Collider> _alreadyCollidedWith = new List<Collider>();
-    private float _damage;
+    private Attack _attack;
 
     private void OnEnable()
     {
@@ -27,14 +30,21 @@ public class WeaponDamage : MonoBehaviour
         {
             if (other.CompareTag("Enemy") && _userCollider.CompareTag("Player"))
             {
-                
+                Debug.Log("Enemy health: " + health.GetHealth());
             }
-            health.DealDamage(_damage, _user, transform.position);
+            health.DealDamage(_attack.Damage, _user, transform.position);
+        }
+
+        if (_attack.IsLauncher && other.TryGetComponent<EnemyStateMachine>(out var enemy))
+        {
+            Debug.Log("Launch hit detected, invoking OnLaunchHit");
+            OnLaunchHit?.Invoke(enemy, _attack.LaunchForce);
         }
     }
 
-    public void SetAttack(float damage)
+    public void SetAttack(Attack attack)
     {
-        _damage = damage;
+        _attack = attack;
+
     }
 }
